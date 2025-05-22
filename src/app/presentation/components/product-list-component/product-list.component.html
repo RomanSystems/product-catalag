@@ -10,6 +10,7 @@
   @for (item of filteredProducts; track item.id) {
     <app-product-card
       [item]="item" class="tarjeta"
+      (click)="goToDetail(item.id)"
       (addedToCart)="cartItemAdd($event)">
     </app-product-card>
   }

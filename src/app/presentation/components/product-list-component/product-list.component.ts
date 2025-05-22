@@ -7,6 +7,8 @@ import {ProductModel} from '../../../core/models/product.model';
 import {CartStore} from '../../state/cart.store';
 import {MatIcon} from '@angular/material/icon';
 import {FormsModule} from '@angular/forms';
+import {Router} from '@angular/router';
+import {ProductRepository} from '../../../data/repositories/product.repository';
 
 @Component({
   selector: 'app-product-list-component',
@@ -1565,12 +1567,14 @@ export class ProductListComponent implements OnInit {
   /* En lugar del servicio usamos el store que es lo mismo */
   /*cartService = inject(CartService);*/
   cartStore = inject(CartStore);
+  productRepository = inject(ProductRepository);
   search: string = ''; // para el ngModel
   ngOnInit() {
     this.listProducts = this.listProducts.filter(function (item, index) {
       item.quantity = 0;
       return item;
     })
+    this.productRepository.saveProducts(this.listProducts);
   }
 
   cartItemAdd(item: ProductModel) {
@@ -1584,5 +1588,11 @@ export class ProductListComponent implements OnInit {
       p.description.toLowerCase().includes(term) ||
       p.category.toLowerCase().includes(term)
     );
+  }
+
+  private router = inject(Router);
+
+  goToDetail(id: number) {
+    this.router.navigate(['/detail', id]);
   }
 }
