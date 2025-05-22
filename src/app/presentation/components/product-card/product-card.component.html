@@ -1,0 +1,28 @@
+<mat-card class="tarjeta">
+  <div class="tarjeta-contenido">
+    <div class="tarjeta-imagen">
+      <!--<img src="{{ item.image }}" height="200px">-->
+      <img src="{{ item.images[0] }}" height="200px">
+    </div>
+    <div class="tarjeta-prod-title">
+      <p>{{ item.title }}</p>
+    </div>
+  </div>
+  <div class="tarjeta-pie">
+    <div class="tarjeta-pie-letras">
+      <div>
+        {{ item.category }}
+      </div>
+      <div>
+        $ {{ item.price }}
+      </div>
+    </div>
+    <div class="tarjeta-pie-botones">
+      <button mat-flat-button aria-label="" (click)="addToCart(item)">
+        <mat-icon fontIcon="shopping_cart"></mat-icon>
+        Agregar
+      </button>
+    </div>
+    <!-- <a [routerLink]="['/details', item.id]" routerLinkActive="router-link-active" >Aqui</a> -->
+  </div>
+</mat-card>

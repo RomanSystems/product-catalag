@@ -1,0 +1,35 @@
+.card-cart{
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8rem;
+  border: 1px solid black;
+  margin: 0.5rem 0.1rem;
+}
+
+.card-cart img{
+  max-width: 90px;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.card-cart-content{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.card-cart-details{
+  width: 100%;
+  /*background-color: black;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /*flex-direction: row;
+  padding: 0.5rem;*/
+}
+
+.tarjeta-pie-botones button {
+  width: 100%;
+}

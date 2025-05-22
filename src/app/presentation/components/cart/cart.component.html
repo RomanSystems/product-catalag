@@ -1,0 +1,38 @@
+<h2>Carrito</h2>
+@if (items.length) {
+  <div>
+    @for (item of items; track item.id) {
+      <div class="card-cart">
+        <img src="{{ item.images[0] }}" alt="" class="card-cart-img">
+        <div class="card-cart-content">
+          <p>{{ item.title }}</p>
+          <div class="card-cart-details">
+            <div>
+              <p>{{ item.quantity }} x ${{ item.price }}<!-- = $ {{ item.price * item.quantity }}--></p>
+            </div>
+            <div>
+              <button mat-button aria-label="Example icon button with a menu icon" (click)="removeProduct(item.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+          <!--<span matBadge="{{ item.quantity }}" matBadgePosition="after" matBadgeColor="accent">
+            {{ item.quantity }}
+          </span>-->
+        </div>
+      </div>
+    }
+    <p><strong>Total: ${{ totalUSD }}</strong></p>
+    <p><strong>Total Products: {{ totalPrdsinCart }}</strong></p>
+
+    <div class="tarjeta-pie-botones">
+      <button mat-flat-button>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="launch"></mat-icon>
+        Ir carrito
+      </button>
+      <button mat-button (click)="clearCart()">Vaciar carrito</button>
+    </div>
+  </div>
+} @else {
+  <p>El carrito está vacío.</p>
+}

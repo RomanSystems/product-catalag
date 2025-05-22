@@ -1,7 +1,23 @@
 
-<main class="main">
-  <div class="content">
-    <app-product-list-component></app-product-list-component>
-  </div>
-</main>
-<router-outlet />
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidenav derecho -->
+  <mat-sidenav #sidenav mode="side" position="end" class="sidenav" opened>
+    <mat-nav-list>
+      <!-- el componente carrito con productos-->
+      <app-cart></app-cart>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Contenido principal -->
+  <main class="main">
+    <!--<a [routerLink]="['/']">Principal</a>-->
+    <div class="content">
+      <router-outlet/>
+    </div>
+    <button mat-raised-button color="primary" (click)="toggleSidenav()">
+      <mat-icon fontIcon="shopping_cart"></mat-icon>
+      {{ totalProdsInCart }} ({{ totalCantProdsInCart }})
+    </button>
+  </main>
+</mat-sidenav-container>
+

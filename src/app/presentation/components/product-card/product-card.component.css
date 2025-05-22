@@ -1,0 +1,64 @@
+/*  */
+:host {
+  display: block;
+  height: 100%; /*la solucion para que se ajuste a las demas tarjetas*/
+}
+
+.tarjeta {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0.2rem;
+  height: 100%; /*la solucion para que se ajuste a las demas tarjetas*/
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.tarjeta:hover{
+  transform: scale(1.05);
+}
+
+.tarjeta-imagen {
+  display: flex;
+  justify-content: center;
+}
+
+.tarjeta-imagen img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.tarjeta-prod-title{
+  margin: 0 0.5rem;
+  padding: 0;
+  text-align: center;
+}
+
+.tarjeta-prod-title p{
+  color: #5a5959;
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+.tarjeta-pie {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tarjeta-pie-letras {
+  margin: 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tarjeta-pie-botones{
+  padding: 0.2rem;
+}
+
+.tarjeta-pie-botones button {
+  margin: 0.2rem 0;
+  width: 100%;
+}

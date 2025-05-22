@@ -1,0 +1,11 @@
+<div>
+  <h1>LISTA DE PRODUCTOS</h1>
+</div>
+<div class="lista-tarjetas">
+  @for (item of listProducts; track item.id) {
+    <app-product-card
+      [item]="item" class="tarjeta"
+      (addedToCart)="cartItemAdd($event)">
+    </app-product-card>
+  }
+</div>

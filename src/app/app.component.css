@@ -1,8 +1,19 @@
+.sidenav-container {
+  background-color: #e3e3e3;
+  height: 100vh;
+}
+
+.sidenav {
+  width: 250px;
+  padding: 10px;
+}
+
 main {
   width: 100%;
   display: flex;
   justify-content: center;
 }
+
 .content {
   width: 1000px;
 }
