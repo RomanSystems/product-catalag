@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="tarjeta-pie-botones">
-      <button mat-flat-button aria-label="" (click)="addToCart(item)">
+      <button mat-flat-button aria-label="" (click)="addToCart(item);$event.stopPropagation()">
         <mat-icon fontIcon="shopping_cart"></mat-icon>
         Agregar
       </button>

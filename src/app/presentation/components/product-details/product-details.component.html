@@ -1,4 +1,15 @@
-<app-product-card
-  [item]="item" class="tarjeta"
-  (addedToCart)="cartItemAdd($event)">
-</app-product-card>
+<div>
+  <a mat-raised-button color="accent" [routerLink]="['/']"
+     routerLinkActive="router-link-active" class="buttons-card">
+    <mat-icon>arrow_back</mat-icon>
+    Ir a
+    principal</a>
+</div>
+
+<div>
+  <app-product-card
+    [item]="item" class="tarjeta"
+    (addedToCart)="cartItemAdd($event)">
+  </app-product-card>
+</div>
+
